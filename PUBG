@@ -1,0 +1,76 @@
+package Pubg01;
+import java.io.*;
+import java.sql.SQLOutput;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Pubg {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.nextLine().trim();
+        Player[] playersArray = new Player[n];
+        if (n > 0 && n <= 100)
+            for (int i = 0; i < n; i++) {
+                String playerName = scanner.nextLine().trim();
+                String userName = scanner.nextLine().trim();
+                String level = scanner.nextLine().trim();
+                scanner.nextLine().trim();
+                int score = scanner.nextInt();
+                scanner.nextLine().trim();
+                playersArray[i] = new Player(playerName, userName, level, score);
+            }
+        System.out.println("PlayerName\tUserName\tLevel\tScore");
+            for(Player player : playersArray) {
+                System.out.println(player);
+            }
+    }
+}
+class Player {
+    private String playerName;
+    private String userName;
+    private String level;
+    private int score;
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+    public void setScore(int score) {
+        this.score = score;
+    }
+    public Player(String playerName, String userName, String level, int score) {
+        this.playerName = playerName;
+        this.userName = userName;
+        this.level = level;
+        this.score = score;
+    }
+    @Override
+    public String toString() {
+        return String.format("%s\t%s\t%s\t%d", getPlayerName(), getUserName(), getLevel(), getScore());
+    }
+}
