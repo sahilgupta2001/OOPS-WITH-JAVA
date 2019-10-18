@@ -12,8 +12,8 @@ class expdemo
 		catch(Exception e)
 		{
 			System.out.println("catch block ------------Problem Occur");
-			//System.out.printl(e);
-			//System.out.println(e.getMessage());
+			System.out.printl(e);
+			System.out.println(e.getMessage());
 		}
 		finally
 		{
@@ -34,6 +34,8 @@ public static void main(String args[]) {
 
 /*output
 catch block ------------Problem Occur
+java.lang.ArithmeticException: / by zero
+/ by zero
 finally block --------------No Impact
 2nd function is Working
 */
